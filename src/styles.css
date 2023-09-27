@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .anchor {
+    @apply text-white font-bold border-spacing-8 p-2  cursor-pointer justify-center flex hover:duration-300 hover:scale-75  hover:text-black hover:shadow-black hover:bg-white transition ease-in-out  ;
+  }
+  .btn {
+    @apply bg-darkgray text-white  font-semibold rounded-lg w-24 justify-center shadow-lg  shadow-white h-8 hover:text-black hover:shadow-black hover:bg-white transition;
+  }
+  .oval-div {
+    @apply bg-warmgray rounded-s-full h-screen flex  shadow-white  shadow-2xl md:overflow-scroll lg:overflow-hidden ;
+  }
+}
