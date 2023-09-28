@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <div class="container h-screen flex flex-col ">
+    <div class=" container h-screen flex flex-col ">
       <nav class="flex justify-end justify-items-end py-6 ">
         <div class="sm:flex-wrap  md:flex lg:flex  ">
           <a class="anchor" routerLink="home">Home</a>

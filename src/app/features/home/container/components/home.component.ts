@@ -28,7 +28,7 @@ import { Router } from '@angular/router';
       <div class="flex justify-end justify-items-end ">
         <img
           class="rounded-full  w-96 h-96 flex  shadow-2xl shadow-slate-600  "
-          src="assets/my-pic.png"
+          src="assets/my-image.png"
           alt=""
         />
       </div>

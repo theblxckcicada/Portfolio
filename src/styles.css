@@ -7,6 +7,10 @@
     background: url("assets/background.png");
     background-size: cover;
   }
+  .base-background {
+    background: url("assets/background.png");
+    background-size: cover;
+  }
   .anchor {
     @apply text-white font-bold border-spacing-8 p-2 w-32 cursor-pointer justify-center flex hover:duration-300 hover:scale-75  hover:text-black hover:shadow-black hover:bg-white transition ease-in-out;
   }
