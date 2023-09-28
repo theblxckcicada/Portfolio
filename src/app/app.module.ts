@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ProfileModule } from './features/profile';
 import { ProjectsModule } from './features/projects';
 import { BlogsModule } from './features/blogs';
-import { RouterLink } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +18,8 @@ import { RouterLink } from '@angular/router';
     ProfileModule,
     ProjectsModule,
     BlogsModule,
+    FontAwesomeModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],

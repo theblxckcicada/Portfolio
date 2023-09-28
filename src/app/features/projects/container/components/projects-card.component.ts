@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'app-projects-card-component',
   template: ` <div class="pt-12 ">
-    <div class="pro-card">
+    <div class="pro-card" (click)="visit()">
       <div class="py-6 md:flex lg:flex">
         <div class="basis-2/4 w-3/4 p-4  h-fit  ">
           <img
@@ -25,4 +24,8 @@ import { Component } from '@angular/core';
     </div>
   </div>`,
 })
-export class ProjectsCardComponent {}
+export class ProjectsCardComponent {
+  visit() {
+    // window.open('');
+  }
+}
