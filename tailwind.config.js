@@ -7,6 +7,7 @@ module.exports = {
       colors: {
         darkgray: "#211F1F",
         warmgray: "#2C2929",
+        glass: "#80c197",
       },
       // screens: {
       //   sm: "480px",

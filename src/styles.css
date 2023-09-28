@@ -3,21 +3,20 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    background: url("assets/background.png");
-    background-size: cover;
-  }
   .base-background {
     background: url("assets/background.png");
     background-size: cover;
   }
   .anchor {
-    @apply text-white font-bold border-spacing-8 p-2 w-32 cursor-pointer justify-center flex hover:duration-300 hover:scale-75  hover:text-black hover:shadow-black hover:bg-white transition ease-in-out;
+    @apply text-white font-bold border-spacing-8 p-2 w-32 cursor-pointer justify-center flex active:bg-white active:text-black hover:duration-300 hover:scale-75  hover:text-black hover:shadow-black hover:bg-white transition ease-in-out  ;
   }
   .btn {
     @apply bg-darkgray text-white  font-semibold rounded-lg w-24 justify-center shadow-lg  shadow-white h-8 hover:text-black hover:shadow-black hover:bg-white transition;
   }
   .oval-div {
     @apply bg-warmgray rounded-r-full h-screen flex  shadow-white  shadow-2xl md:overflow-scroll lg:overflow-hidden;
+  }
+  .pro-card {
+    @apply flex-col flex justify-start justify-items-center  mx-32 sm:w-1/2 sm:h-1/2 lg:w-3/4  lg:h-3/4 border shadow-md drop-shadow-2xl shadow-glass border-glass rounded-md hover:cursor-pointer hover:bg-warmgray hover:scale-105 transition;
   }
 }
