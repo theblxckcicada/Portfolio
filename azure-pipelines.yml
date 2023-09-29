@@ -12,7 +12,7 @@ pool:
 steps:
 - task: AzureStaticWebApp@0
   inputs:
-    app_location: '/'
+    app_location: './'
     app_build_command: 'npm install -g @angular/cli   &&  npm install && npm run build'
     api_location: 'api'
     api_build_command: 'dotnet build'
