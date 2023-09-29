@@ -19,7 +19,6 @@ steps:
     app_location: '/'
     app_build_command: 'npm install -g @angular/cli   &&  npm install && npm run build'
     output_location: 'dist/personal-portfolio'
-    api_location: 'api'
     api_build_command: 'dotnet build'
     azure_static_web_apps_api_token: 'ee3a66846fe79821e6f014c1a70f499caf2a3914cd3da69317a3c8ff1c0b75353-5629cec0-da5f-4a36-9cb4-96bfcad7d32c010244827'
 
