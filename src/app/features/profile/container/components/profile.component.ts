@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Project } from 'src/models';
 
 @Component({
   selector: 'app-profile-component',
@@ -18,7 +19,7 @@ import { Router } from '@angular/router';
             Dimakatso Sebatane,
           </p>
         </div>
-        <div class="w-96 justify-center flex mt-8 flex-col ">
+        <div class="w-96 justify-center flex mt-8 flex-col overflow-x">
           <p class="text-white justify-center flex pb-6 flex-wrap">
             I am a passionate web developer with expertise in Angular, ASP.NET
             Core, and cutting-edge technologies. My journey in web development
@@ -45,6 +46,7 @@ import { Router } from '@angular/router';
   `,
 })
 export class ProfileComponent {
+
   constructor(private router: Router) {}
 
   navigateToProfile() {

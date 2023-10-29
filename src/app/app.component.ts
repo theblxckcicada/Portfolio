@@ -35,7 +35,7 @@ import { Router } from '@angular/router';
           </ul>
         </nav>
         <!-- md:overflow-visible lg:overflow-hidden-->
-        <div class=" h-full w-screen overflow-x-hidden">
+        <div class=" h-full w-screen overflow-x-auto">
           <router-outlet></router-outlet>
         </div>
       </div>

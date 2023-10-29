@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { Project } from 'src/models';
 
 @Component({
   selector: 'app-projects-component',
@@ -26,7 +27,8 @@ import { Router } from '@angular/router';
       </div>
       <div class="grid md:grid-cols-1 lg:grid-cols-2 ">
         <app-projects-card-component
-          *ngFor="let card of count"
+          *ngFor="let card of projects"
+          [project]="card"
         ></app-projects-card-component>
       </div>
     </div>
@@ -34,7 +36,7 @@ import { Router } from '@angular/router';
   styles: [``],
 })
 export class ProjectsComponent {
-  count = [1, 2, 3, 4,];
+  @Input() projects: Project[] | null = [];
   constructor(private router: Router) {}
 
   navigateToProfile() {
