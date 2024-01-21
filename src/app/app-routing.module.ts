@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 
 import { RouterModule, Routes } from '@angular/router';
-import { HomeContainer } from './features/home/container';
+import { AppComponent } from './app.component';
+// import { HomeContainer } from './features/home/container';
 
 const routes: Routes = [
   {
@@ -10,26 +11,26 @@ const routes: Routes = [
       import('./features/home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: 'profile',
+    path: 'skills',
     loadChildren: () =>
-      import('./features/profile/profile.module').then((m) => m.ProfileModule),
+      import('./features/skills/skills.module').then((m) => m.SkillModule),
   },
   {
     path: 'projects',
     loadChildren: () =>
-      import('./features/projects/projects.module').then(
-        (m) => m.ProjectsModule
+      import('./features/projects/project.module').then(
+        (m) => m.ProjectModule
       ),
   },
-  {
-    path: 'blogs',
-    loadChildren: () =>
-      import('./features/blogs/blogs.module').then((m) => m.BlogsModule),
-  },
-  { path: '', component: HomeContainer },
+  // {
+  //   path: 'blogs',
+  //   loadChildren: () =>
+  //     import('./features/blogs/blogs.module').then((m) => m.BlogsModule),
+  // },
+
   {
     path: '**',
-    redirectTo: '',
+    redirectTo: 'home',
   },
 ];
 @NgModule({

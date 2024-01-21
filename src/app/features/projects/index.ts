@@ -1,2 +1,2 @@
-export * from './projects-routing.module';
-export * from './projects.module'
+export * from './project.module'
+export * from './project-routing.module'
