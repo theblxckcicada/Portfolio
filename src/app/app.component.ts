@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
   template: `
-    <div class="w-screen body ">
-      <div class="flex flex-col w-full container">
+    <div class="w-screen bg-black h-screen ">
+      <div class="flex flex-col w-screen h-screen">
         <div class="nav">
-          <div class="flex justify-end w-full pr-14">
+          <div class="flex justify-end w-full">
             <button
               mat-button
               [matMenuTriggerFor]="menu"
@@ -15,7 +16,10 @@ import { Router } from '@angular/router';
             >
               <mat-icon class="text-4xl">menu</mat-icon>
             </button>
-            <mat-menu #menu="matMenu" class="bg-basecolor text-white cursor-pointer">
+            <mat-menu
+              #menu="matMenu"
+              class="bg-basecolor text-white cursor-pointer"
+            >
               <a
                 routerLink="/home"
                 mat-menu-item
@@ -39,6 +43,7 @@ import { Router } from '@angular/router';
               >
               <a
                 href="https://blog.blxckcicada.co.za"
+                target="https://blog.blxckcicada.co.za"
                 mat-menu-item
                 class="nav-link"
                 routerLinkActive="active"
@@ -47,16 +52,10 @@ import { Router } from '@angular/router';
             </mat-menu>
           </div>
           <div class="hidden md:flex">
-            <a
-              routerLink="/home"
-              routerLinkActive="active"
-              class="nav-link "
+            <a routerLink="/home" routerLinkActive="active" class="nav-link "
               >Home</a
             >
-            <a
-              routerLink="/skills"
-              class="nav-link "
-              routerLinkActive="active"
+            <a routerLink="/skills" class="nav-link " routerLinkActive="active"
               >Skills</a
             >
             <a
@@ -67,6 +66,7 @@ import { Router } from '@angular/router';
             >
             <a
               href="https://blog.blxckcicada.co.za"
+              target="https://blog.blxckcicada.co.za"
               class="nav-link "
               routerLinkActive="active"
               >Blogs</a
@@ -74,7 +74,7 @@ import { Router } from '@angular/router';
           </div>
         </div>
 
-        <div class="container overflow-auto">
+        <div class="p-12 w-screen h-screen justify-center flex">
           <router-outlet></router-outlet>
         </div>
       </div>
@@ -83,7 +83,24 @@ import { Router } from '@angular/router';
       class="text-white flex justify-center bottom-0 fixed w-screen p-4 bg-warmgray cursor-pointer"
       (click)="navigateToHome()"
     >
-      <mat-icon>copyright</mat-icon> The Blxck Cicada
+      <div class="flex justify-center">
+        <mat-icon>copyright</mat-icon> The Blxck Cicada
+      </div>
+      <div class="text-white app-justify-center">
+        <a
+          class="button"
+          [href]="getInstagramUrl()"
+          [target]="getInstagramUrl()"
+        >
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a class="button" [href]="getLinkedInUrl()" [target]="getLinkedInUrl()">
+          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a class="button" [href]="getGithubUrl()" [target]="getGithubUrl()">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+        </a>
+      </div>
     </footer>
   `,
   styles: [
@@ -104,13 +121,13 @@ import { Router } from '@angular/router';
         }
 
         .nav {
-          @apply text-white h-10 mt-4 app-justify-center flex-wrap;
+          @apply text-white  app-justify-center flex-wrap fixed w-full  bg-black h-24 px-12;
         }
         .body {
           @apply bg-basecolor h-screen app-justify-center;
         }
         .nav-link {
-          @apply px-12 py-2 cursor-pointer app-justify-center  hover:bg-white hover:text-black;
+          @apply h-10 px-12 py-2 cursor-pointer app-justify-center  hover:bg-white hover:text-black;
         }
       }
     `,
@@ -125,5 +142,15 @@ export class AppComponent {
   }
   ngOnInit() {
     this.router.events.subscribe((event) => {});
+  }
+  getInstagramUrl() {
+    return environment.instagram;
+  }
+
+  getGithubUrl() {
+    return environment.github;
+  }
+  getLinkedInUrl() {
+    return environment.linkedin;
   }
 }

@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  instagram: 'https://www.instagram.com/theblxckcicada/',
+  linkedin: 'https://www.linkedin.com/in/bafedile-s-9a474a1a9',
+  github: 'https://github.com/TheBlxckcicada',
 };

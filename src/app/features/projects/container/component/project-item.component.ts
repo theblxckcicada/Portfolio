@@ -9,7 +9,7 @@ import { Project } from 'src/models';
       <div>
         <h1 class="app-justify-center py-4 text-2xl justify-evenly">
           {{ project.name }}
-          <a [href]="project.link"
+          <a [href]="project.link" [target]="project.link"
             ><i
               class="fa-solid fa-arrow-up-right-from-square cursor-pointer"
             ></i
