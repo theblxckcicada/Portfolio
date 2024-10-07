@@ -5,10 +5,15 @@ import { Project } from 'src/models';
 
 @Component({
   selector: 'app-project-container',
-  template: `<app-project [projects]="project$ | async"></app-project>`,
+  template: `<app-project
+    [web_projects]="web_project$ | async"
+    [pentest_projects]="pentest_project$ | async"
+  ></app-project>`,
   styles: [``],
 })
 export class ProjectContainer {
   projectService = inject(ProjectService);
-  project$: Observable<Project[]> = this.projectService.getProjects();
+  web_project$: Observable<Project[]> = this.projectService.getWebProjects();
+  pentest_project$: Observable<Project[]> =
+    this.projectService.getPentestProjects();
 }

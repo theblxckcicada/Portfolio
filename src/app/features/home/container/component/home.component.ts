@@ -3,8 +3,7 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-home',
   template: `
-    <!-- <div class="body grid grid-cols-1"> -->
-    <div class="container flex flex-col mt-24 ">
+    <div class="container flex flex-col mt-24 lg:mt-40 ">
       <div class="flex flex-col lg:flex-row ">
         <div class="w-screen flex  justify-center lg:justify-end">
           <div class="flex-col text-white app-justify-center">
@@ -14,47 +13,22 @@ import { environment } from 'src/environments/environment';
             <p class="app-justify-center p-2 text-2xl lg:text-4xl ">
               I'm Dimakatso Sebatane
             </p>
-            <p class="flex lg:app-justify-center text-lg lg:text-2xl p-2 ">
-              <span>Developer</span> | <span>Software Integration</span> |
-              <span>Security Engineer</span>
+            <p class="flex lg:app-justify-center text-lg lg:text-2xl p-2 flex-col lg:flex-row">
+              <span class="px-2">Developer</span> | <span class="px-2">Software Integration</span> |
+              <span class="px-2">Security Engineer</span>
             </p>
             <div class="flex justify-center p-2 w-full">
               <a
                 routerLink="/projects"
-                class="shadow-b-sm shadow-white p-2 w-36 flex justify-center rounded-sm border-b-2 hover:border-2 hover:bg-white hover:text-black"
+                class="shadow-b-sm p-2 w-36 flex justify-center rounded-sm border-b-2 border-gray-900 hover:border-b-2 hover:border-white "
                 >View Projects</a
               >
             </div>
-            <!-- <div class="text-white app-justify-center p-2">
-              <a
-                class="button"
-                [href]="getInstagramUrl()"
-                [target]="getInstagramUrl()"
-              >
-                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-              </a>
-              <a
-                class="button"
-                [href]="getLinkedInUrl()"
-                [target]="getLinkedInUrl()"
-              >
-                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a
-                class="button"
-                [href]="getGithubUrl()"
-                [target]="getGithubUrl()"
-              >
-                <i class="fa-brands fa-github" aria-hidden="true"></i>
-              </a>
-            </div> -->
           </div>
         </div>
         <div class="w-full flex justify-center lg:justify-start">
           <img src="assets/Cicada_inverted.jpg" class="w-96 bg-blend-overlay" />
         </div>
-
-        <!-- </div> -->
       </div>
     </div>
   `,
