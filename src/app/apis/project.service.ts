@@ -5,7 +5,7 @@ import { Skill } from '../model';
 
 @Injectable({ providedIn: 'root' })
 export class ProjectService {
-  projects: Project[] = [
+  webProjects: Project[] = [
     {
       name: 'Marvel  Explorer',
       description:
@@ -21,16 +21,26 @@ export class ProjectService {
       image: 'assets/animals_project.png',
     },
   ];
+  pentestProjects: Project[] = [
+    {
+      name: 'Cicada Mastertul',
+      description:
+        'The tool allows users to authenticate with a target domain using either usernames and passwords or NTLM hashes, and it provides a wide range of enumeration options to gather information about domain users, services, and vulnerabilities. It can also assist with cracking password hashes and extracting sensitive information for further exploitation.',
+      link: 'https://github.com/TheBlxckCicada/Cicada-Mastertul',
+      image: 'assets/cicada_mastertul.mp4',
+      // image: 'assets/cicada_mastertul.png',
+    },
+  ];
 
   skills: Skill[] = [
     {
-      icon: 'assets/anonymous.jpg',
-      text: 'Penetration Testing',
+      icon: 'assets/hacker.avif',
+      text: 'Network Pentest | Ethical Hacking',
       isCertification: false,
     },
     {
       icon: 'assets/azure-icon.png',
-      text: 'Cloud Development',
+      text: 'Microsoft Azure | Cloud Development',
       isCertification: false,
     },
     {
@@ -40,7 +50,7 @@ export class ProjectService {
     },
     {
       icon: 'assets/integration.png',
-      text: 'Integration - CI/CD',
+      text: 'Integration - CI/CD | Azure DevOps',
       isCertification: false,
     },
     {
@@ -50,7 +60,7 @@ export class ProjectService {
     },
     {
       icon: 'assets/cisco-icon.png',
-      text: 'Computer Networking',
+      text: 'Cisco Networking',
       isCertification: false,
     },
     {
@@ -61,28 +71,32 @@ export class ProjectService {
 
     {
       icon: 'assets/pjpt.png',
-      text: 'TCM - PJPT',
+      text: 'Practical Junior Penetration Tester',
       isCertification: true,
     },
     {
       icon: 'assets/PNPT.png',
-      text: 'TCM - PNPT',
+      text: 'Practical Network Penetration Tester',
       isCertification: true,
     },
     {
       icon: 'assets/dev-associate.png',
-      text: 'Microsoft - AZ-204',
+      text: 'Microsoft Azure Developer',
       isCertification: true,
     },
     {
       icon: 'assets/devops.png',
-      text: 'Microsoft - AZ-400',
+      text: 'Microsoft Azure DevOps Engineer',
       isCertification: true,
     },
   ];
 
-  getProjects() {
-    return of(this.projects);
+  getPentestProjects() {
+    return of(this.pentestProjects);
+  }
+
+  getWebProjects() {
+    return of(this.webProjects);
   }
 
   getSkills() {

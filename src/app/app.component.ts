@@ -42,8 +42,8 @@ import { environment } from 'src/environments/environment';
                 >Projects</a
               >
               <a
-                href="https://blog.blxckcicada.co.za"
-                target="https://blog.blxckcicada.co.za"
+                [href]="getBlogUrl()"
+                [target]="getBlogUrl()"
                 mat-menu-item
                 class="nav-link"
                 routerLinkActive="active"
@@ -65,8 +65,8 @@ import { environment } from 'src/environments/environment';
               >Projects</a
             >
             <a
-              href="https://blog.blxckcicada.co.za"
-              target="https://blog.blxckcicada.co.za"
+              [href]="getBlogUrl()"
+              [target]="getBlogUrl()"
               class="nav-link "
               routerLinkActive="active"
               >Blogs</a
@@ -80,13 +80,16 @@ import { environment } from 'src/environments/environment';
       </div>
     </div>
     <footer
-      class="text-white flex justify-center bottom-0 fixed w-screen p-4 bg-warmgray cursor-pointer"
+      class="text-white flex justify-center bottom-0 fixed w-screen p-4 bg-basecolor cursor-pointer"
       (click)="navigateToHome()"
     >
       <div class="flex justify-center">
         <mat-icon>copyright</mat-icon> The Blxck Cicada
       </div>
       <div class="text-white app-justify-center">
+        <a class="button" [href]="getYoutubeUrl()" [target]="getYoutubeUrl()">
+          <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+        </a>
         <a
           class="button"
           [href]="getInstagramUrl()"
@@ -114,7 +117,7 @@ import { environment } from 'src/environments/environment';
           @apply flex justify-center;
         }
         .active {
-          @apply bg-white  text-black font-bold hover:bg-white hover:text-black hover:font-bold;
+          @apply text-white font-bold border-b-2 hover:font-bold;
         }
         .button {
           @apply app-justify-center px-4 text-xl hover:scale-110 cursor-pointer;
@@ -127,7 +130,7 @@ import { environment } from 'src/environments/environment';
           @apply bg-basecolor h-screen app-justify-center;
         }
         .nav-link {
-          @apply h-10 px-12 py-2 cursor-pointer app-justify-center  hover:bg-white hover:text-black;
+          @apply h-10 px-12 py-2 cursor-pointer app-justify-center hover:border-b-2;
         }
       }
     `,
@@ -152,5 +155,11 @@ export class AppComponent {
   }
   getLinkedInUrl() {
     return environment.linkedin;
+  }
+  getYoutubeUrl() {
+    return environment.youtube;
+  }
+  getBlogUrl() {
+    return environment.blog;
   }
 }

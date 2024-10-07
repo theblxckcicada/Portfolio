@@ -3,9 +3,13 @@ import { Project } from 'src/models';
 
 @Component({
   selector: 'app-project-item-container',
-  template: `<app-project-item [project]="project"></app-project-item>`,
+  template: `<app-project-item
+    [project]="project"
+    [isVideo]="isVideo"
+  ></app-project-item>`,
   styles: [``],
 })
 export class ProjectItemContainer {
   @Input() project!: Project;
+  @Input() isVideo = false;
 }
