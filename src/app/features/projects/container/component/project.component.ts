@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Project } from 'src/models';
+import { CTF, Project } from 'src/models';
 
 @Component({
   selector: 'app-project',
@@ -18,10 +18,21 @@ import { Project } from 'src/models';
       </div>
 
       <div class="flex justify-center w-full text-white flex-col">
-        <p class="p-2 flex justify-center text-4xl">Pentest Tools</p>
+        <p class="p-2 flex justify-center text-4xl">Capture The Flags (CTF)</p>
         <mat-divider class="bg-white w-full"></mat-divider>
       </div>
       <div class="my-12 flex flex-wrap justify-evenly pb-4 ">
+        <app-project-item-container
+          *ngFor="let ctf of ctf_projects"
+          [project]="ctf"
+        >
+        </app-project-item-container>
+      </div>
+      <div class="flex justify-center w-full text-white flex-col">
+        <p class="p-2 flex justify-center text-4xl">Pentest Tools</p>
+        <mat-divider class="bg-white w-full"></mat-divider>
+      </div>
+      <div class="my-12 mb-24 flex flex-wrap justify-evenly pb-4 ">
         <app-project-item-container
           *ngFor="let project of pentest_projects"
           [project]="project"
@@ -37,6 +48,7 @@ export class ProjectComponent {
   isActive = false;
   @Input() web_projects: Project[] | undefined | null = [];
   @Input() pentest_projects: Project[] | undefined | null = [];
+  @Input() ctf_projects: CTF[] | undefined | null = [];
   onView() {
     this.isActive = !this.isActive;
   }

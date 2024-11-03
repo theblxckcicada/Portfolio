@@ -24,10 +24,14 @@ import { Project } from 'src/models';
           ></a>
         </h1>
       </div>
-      <div class="w-96 h-52 p-4">
-        <ng-container *ngIf="!isVideo"
-          ><img [src]="project.image"
-        /></ng-container>
+      <div class="w-full p-4 flex justify-center">
+        <div class="w-72 h-56 flex justify-center bg-red-500">
+          <ng-container *ngIf="!isVideo"
+            ><img
+              [src]="project.image"
+              class="w-full h-full flex justify-center"
+          /></ng-container>
+        </div>
 
         <ng-container *ngIf="isVideo">
           <video [src]="project.image" #videoPlayer controls></video>
