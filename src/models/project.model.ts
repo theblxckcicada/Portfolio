@@ -4,3 +4,5 @@ export interface Project {
   image: string;
   link: string;
 }
+
+export interface CTF extends Project {}

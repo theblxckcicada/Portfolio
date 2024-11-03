@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
-import { Project } from 'src/models';
+import { CTF, Project } from 'src/models';
 import { Skill } from '../model';
 
 @Injectable({ providedIn: 'root' })
@@ -17,7 +17,7 @@ export class ProjectService {
       name: 'Animal Kingdom',
       description:
         'The Animal Kingdom Explorer is a project designed to help you explore and learn about various types of animals, classified as herbivores, carnivores, and omnivores. Immerse yourself in the world of the animal kingdom, discovering their unique characteristics and dietary preferences.',
-      link: 'https://greeable-smoke-0732c9910.5.azurestaticapps.net',
+      link: 'https://agreeable-smoke-0732c9910.5.azurestaticapps.net',
       image: 'assets/animals_project.png',
     },
   ];
@@ -28,7 +28,29 @@ export class ProjectService {
         'The tool allows users to authenticate with a target domain using either usernames and passwords or NTLM hashes, and it provides a wide range of enumeration options to gather information about domain users, services, and vulnerabilities. It can also assist with cracking password hashes and extracting sensitive information for further exploitation.',
       link: 'https://github.com/TheBlxckCicada/Cicada-Mastertul',
       image: 'assets/cicada_mastertul.mp4',
-      // image: 'assets/cicada_mastertul.png',
+    },
+  ];
+  ctfProjects: CTF[] = [
+    {
+      name: 'Cicada',
+      description:
+        'A Hack The Box approved and hosted Active Directory CTF that allows an individual to practice their AD exploitation techniques.',
+      link: 'https://app.hackthebox.com/machines/Cicada',
+      image: 'assets/cicada_ctf2.png',
+    },
+    {
+      name: 'The Originals',
+      description:
+        "A Try Hack Me private hosted Active Directory CTF inspired by the show 'The Originals'. ",
+      link: 'https://tryhackme.com/jr/theoriginals',
+      image: 'assets/theoriginals_ctf.png',
+    },
+    {
+      name: 'Blind Spot',
+      description:
+        'A Try Hack Me private Linux hosted CTF.The FBI finds a mysterious tattooed woman in Times Square with no memory of her identity. As she tries to uncover her past, her tattoos are found to contain clues alluding to a criminal conspiracy.',
+      link: 'https://tryhackme.com/jr/blindspot',
+      image: 'assets/blindspot_ctf.png',
     },
   ];
 
@@ -101,5 +123,8 @@ export class ProjectService {
 
   getSkills() {
     return of(this.skills);
+  }
+  getCTFs() {
+    return of(this.ctfProjects);
   }
 }
