@@ -1,36 +1,131 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+
 @Component({
   selector: 'app-home',
   template: `
-    <div class="container flex flex-col mt-24 lg:mt-40 ">
-      <div class="flex flex-col lg:flex-row ">
-        <div class="w-screen flex  justify-center lg:justify-end">
-          <div class="flex-col text-white app-justify-center">
-            <p class="app-justify-center p-2 text-2xl lg:text-4xl ">
-              Hi there! 👋
-            </p>
-            <p class="app-justify-center p-2 text-2xl lg:text-4xl ">
-              I'm Dimakatso Sebatane
-            </p>
-            <p class="flex lg:app-justify-center text-lg lg:text-2xl p-2 flex-col lg:flex-row">
-              <span class="px-2">Developer</span> | <span class="px-2">Software Integration</span> |
-              <span class="px-2">Security Engineer</span>
-            </p>
-            <div class="flex justify-center p-2 w-full">
+    <div class="w-screen  h-screen ">
+      <div class="flex flex-col w-screen h-screen">
+        <div class="nav">
+          <div class="flex justify-end w-full">
+            <button
+              mat-button
+              [matMenuTriggerFor]="menu"
+              class="md:hidden block cursor-pointer"
+            >
+              <mat-icon class="text-4xl">menu</mat-icon>
+            </button>
+            <mat-menu
+              #menu="matMenu"
+              class="bg-basecolor text-white cursor-pointer"
+            >
               <a
-                routerLink="/projects"
-                class="shadow-b-sm p-2 w-36 flex justify-center rounded-sm border-b-2 border-gray-900 hover:border-b-2 hover:border-white "
-                >View Projects</a
+                routerLink="/non-tech/home"
+                mat-menu-item
+                routerLinkActive="active"
+                class="nav-link"
+                >Home</a
               >
-            </div>
+              <a
+                routerLink="/non-tech/skills"
+                mat-menu-item
+                class="nav-link"
+                routerLinkActive="active"
+                >Skills</a
+              >
+              <a
+                routerLink="/non-tech/projects"
+                mat-menu-item
+                class="nav-link"
+                routerLinkActive="active"
+                >Projects</a
+              >
+              <a
+                routerLink="/terminal"
+                target="/terminal"
+                mat-menu-item
+                class="nav-link"
+                routerLinkActive="active"
+                >Terminal</a
+              >
+              <a
+                [href]="getBlogUrl()"
+                [target]="getBlogUrl()"
+                mat-menu-item
+                class="nav-link"
+                routerLinkActive="active"
+                >Blogs</a
+              >
+            </mat-menu>
+          </div>
+          <div class="hidden md:flex">
+            <a
+              routerLink="/non-tech/home"
+              routerLinkActive="active"
+              class="nav-link "
+              >Home</a
+            >
+            <a
+              routerLink="/non-tech/skills"
+              class="nav-link "
+              routerLinkActive="active"
+              >Skills</a
+            >
+            <a
+              routerLink="/non-tech/projects"
+              class="nav-link "
+              routerLinkActive="active"
+              >Projects</a
+            >
+            <a
+              routerLink="/terminal"
+              target="/terminal"
+              class="nav-link "
+              routerLinkActive="active"
+              >Terminal</a
+            >
+            <a
+              [href]="getBlogUrl()"
+              [target]="getBlogUrl()"
+              class="nav-link "
+              routerLinkActive="active"
+              >Blogs</a
+            >
           </div>
         </div>
-        <div class="w-full flex justify-center lg:justify-start">
-          <img src="assets/Cicada_inverted.jpg" class="w-96 bg-blend-overlay" />
+
+        <div class="p-12 w-screen h-screen justify-center flex">
+          <router-outlet></router-outlet>
         </div>
       </div>
     </div>
+    <footer
+      class="text-white flex justify-center bottom-0 fixed w-screen p-4  cursor-pointer"
+      (click)="navigateToHome()"
+    >
+      <div class="flex justify-center">
+        <mat-icon>copyright</mat-icon> The Blxck Cicada
+      </div>
+      <div class="text-white app-justify-center">
+        <a class="button" [href]="getYoutubeUrl()" [target]="getYoutubeUrl()">
+          <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+        </a>
+        <a
+          class="button"
+          [href]="getInstagramUrl()"
+          [target]="getInstagramUrl()"
+        >
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a class="button" [href]="getLinkedInUrl()" [target]="getLinkedInUrl()">
+          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a class="button" [href]="getGithubUrl()" [target]="getGithubUrl()">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+        </a>
+      </div>
+    </footer>
   `,
   styles: [
     `
@@ -43,29 +138,35 @@ import { environment } from 'src/environments/environment';
           @apply flex justify-center;
         }
         .active {
-          @apply bg-white  text-black font-bold hover:bg-white hover:text-black hover:font-bold;
+          @apply text-white font-bold border-b-2 hover:font-bold;
         }
         .button {
-          @apply app-justify-center px-4 text-xl cursor-pointer hover:border-b-2  hover:shadow-sm;
+          @apply app-justify-center px-4 text-xl hover:scale-110 cursor-pointer;
         }
 
         .nav {
-          @apply text-white h-10 mt-4 app-justify-center flex-wrap;
+          @apply text-white  app-justify-center flex-wrap fixed w-full   h-24 px-12;
         }
-        .content {
-          @apply flex flex-col bg-darkgray text-white w-full;
+        .body {
+          @apply bg-basecolor h-screen app-justify-center;
         }
         .nav-link {
-          @apply px-12 py-2 cursor-pointer app-justify-center hover:bg-warmgray;
-        }
-        .typing {
-          @apply relative w-[max-content] font-mono before:absolute before:inset-0 before:animate-typewriter before:bg-basecolor after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-basecolor;
+          @apply h-10 px-12 py-2 cursor-pointer app-justify-center hover:border-b-2;
         }
       }
     `,
   ],
 })
 export class HomeComponent {
+  title = 'PersonalPortfolio';
+  constructor(private router: Router) {}
+
+  navigateToHome() {
+    this.router.navigate(['/non-tech']);
+  }
+  ngOnInit() {
+    this.router.events.subscribe((event) => {});
+  }
   getInstagramUrl() {
     return environment.instagram;
   }
@@ -75,5 +176,11 @@ export class HomeComponent {
   }
   getLinkedInUrl() {
     return environment.linkedin;
+  }
+  getYoutubeUrl() {
+    return environment.youtube;
+  }
+  getBlogUrl() {
+    return environment.blog;
   }
 }

@@ -10,8 +10,11 @@ import { ApplicationCommonModule } from './common';
 import { HomeModule } from './features/home';
 import { SkillModule } from './features/skills';
 import { ProjectModule } from './features/projects';
+import { TerminalModule } from './features/terminal';
+import { AboutModule } from './features/about';
 
-const AppModules = [HomeModule, SkillModule, ProjectModule];
+const AppModules = [HomeModule, SkillModule, ProjectModule, AboutModule];
+const TerminalModules = [TerminalModule];
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -20,6 +23,7 @@ const AppModules = [HomeModule, SkillModule, ProjectModule];
     BrowserAnimationsModule,
     ApplicationCommonModule,
     AppModules,
+    TerminalModules,
   ],
   providers: [],
   bootstrap: [AppComponent],
