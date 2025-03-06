@@ -23,11 +23,11 @@ export class ProjectService {
   ];
   pentestProjects: Project[] = [
     {
-      name: 'Cicada Mastertul',
+      name: 'Active Directory Ovawatch',
       description:
         'The tool allows users to authenticate with a target domain using either usernames and passwords or NTLM hashes, and it provides a wide range of enumeration options to gather information about domain users, services, and vulnerabilities. It can also assist with cracking password hashes and extracting sensitive information for further exploitation.',
-      link: 'https://github.com/TheBlxckCicada/Cicada-Mastertul',
-      image: 'assets/cicada_mastertul.mp4',
+      link: 'https://github.com/TheBlxckCicada/AD-Ovawatch',
+      image: 'assets/videos/cicada_mastertul.mp4',
     },
   ];
   ctfProjects: CTF[] = [
@@ -51,6 +51,13 @@ export class ProjectService {
         'A Try Hack Me private Linux hosted CTF.The FBI finds a mysterious tattooed woman in Times Square with no memory of her identity. As she tries to uncover her past, her tattoos are found to contain clues alluding to a criminal conspiracy.',
       link: 'https://tryhackme.com/jr/blindspot',
       image: 'assets/blindspot_ctf.png',
+    },
+    {
+      name: 'Supernatural',
+      description:
+        'A Try Hack Me private Windows AD hosted CTF.Players will begin by learning essential enumeration techniques to identify valuable information such as plaintext credentials stored in files. As they progress, they will encounter tasks requiring Kerberoasting to extract and crack service account.',
+      link: 'https://tryhackme.com/jr/supernatural',
+      image: 'assets/supernatural.png',
     },
   ];
 

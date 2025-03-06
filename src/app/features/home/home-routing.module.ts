@@ -6,6 +6,39 @@ const routes: Route[] = [
   {
     path: '',
     component: HomeContainer,
+    children: [
+      {
+        path: 'skills',
+        loadChildren: () =>
+          import('../../features/skills/skills.module').then(
+            (m) => m.SkillModule
+          ),
+      },
+      {
+        path: 'projects',
+        loadChildren: () =>
+          import('../../features/projects/project.module').then(
+            (m) => m.ProjectModule
+          ),
+      },
+      {
+        path: 'home',
+        loadChildren: () =>
+          import('../../features/about/about.module').then(
+            (m) => m.AboutModule
+          ),
+      },
+      {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full',
+      },
+    ],
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
   },
 ];
 @NgModule({

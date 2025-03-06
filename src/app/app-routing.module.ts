@@ -6,31 +6,22 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: 'non-tech',
     loadChildren: () =>
       import('./features/home/home.module').then((m) => m.HomeModule),
   },
+
   {
-    path: 'skills',
+    path: 'terminal',
     loadChildren: () =>
-      import('./features/skills/skills.module').then((m) => m.SkillModule),
-  },
-  {
-    path: 'projects',
-    loadChildren: () =>
-      import('./features/projects/project.module').then(
-        (m) => m.ProjectModule
+      import('./features/terminal/terminal.module').then(
+        (m) => m.TerminalModule
       ),
   },
-  // {
-  //   path: 'blogs',
-  //   loadChildren: () =>
-  //     import('./features/blogs/blogs.module').then((m) => m.BlogsModule),
-  // },
 
   {
     path: '**',
-    redirectTo: 'home',
+    redirectTo: 'terminal',
   },
 ];
 @NgModule({
