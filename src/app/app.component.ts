@@ -5,106 +5,69 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-root',
   template: `
-    <div class="w-screen bg-black h-screen ">
-      <div class="flex flex-col w-screen h-screen">
-        <div class="nav">
-          <div class="flex justify-end w-full">
-            <button
-              mat-button
-              [matMenuTriggerFor]="menu"
-              class="md:hidden block cursor-pointer"
-            >
-              <mat-icon class="text-4xl">menu</mat-icon>
-            </button>
-            <mat-menu
-              #menu="matMenu"
-              class="bg-basecolor text-white cursor-pointer"
-            >
-              <a
-                routerLink="/home"
-                mat-menu-item
-                routerLinkActive="active"
-                class="nav-link"
-                >Home</a
+    <div class="bg-image z-0"></div>
+    <div class="absolute top-0 w-full h-full border-white border-2">
+      <div class="flex justify-center w-full ">
+        <div class="container mx-auto p-4 h-full flex flex-col">
+          <!-- Terminal Header -->
+          <div class="bg-gray-900 p-2 rounded-t-lg flex items-center">
+            <div class="flex space-x-2">
+              <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+              <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+              <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            </div>
+            <div class="text-center flex-grow">
+              <span class="text-sm text-green-500"
+                >theblxckcicada@ovawatch.co.za: ~</span
               >
-              <a
-                routerLink="/skills"
-                mat-menu-item
-                class="nav-link"
-                routerLinkActive="active"
-                >Skills</a
-              >
-              <a
-                routerLink="/projects"
-                mat-menu-item
-                class="nav-link"
-                routerLinkActive="active"
-                >Projects</a
-              >
-              <a
-                [href]="getBlogUrl()"
-                [target]="getBlogUrl()"
-                mat-menu-item
-                class="nav-link"
-                routerLinkActive="active"
-                >Blogs</a
-              >
-            </mat-menu>
+            </div>
           </div>
-          <div class="hidden md:flex">
-            <a routerLink="/home" routerLinkActive="active" class="nav-link "
-              >Home</a
-            >
-            <a routerLink="/skills" class="nav-link " routerLinkActive="active"
-              >Skills</a
-            >
-            <a
-              routerLink="/projects"
-              class="nav-link "
-              routerLinkActive="active"
-              >Projects</a
-            >
-            <a
-              [href]="getBlogUrl()"
-              [target]="getBlogUrl()"
-              class="nav-link "
-              routerLinkActive="active"
-              >Blogs</a
-            >
-          </div>
-        </div>
+          <div
+            class="terminal-scrollbar flex-grow bg-gray-900 p-4 rounded-b-lg overflow-y-auto"
+          >
+            <!-- Welcome Message -->
+            <div>
+              <p class="mb-4">
+                <span class="text-green-500"
+                  >theblxckcicada@ovawatch.co.za:~$</span
+                >
+                <span class="text-white ml-3">cat welcome.txt</span>
+              </p>
+              <div class="text-white">
+                <p class="">
+                  Hi there! 👋<br />
+                  I'm <span class="highlight">Dimakatso Sebatane</span>, but in
+                  the shadows, I go by
+                  <span class="glitch">theblxckcicada</span>.<br />
+                  I am a <span class="highlight">Developer</span> |
+                  <span class="highlight">Software Integration Specialist</span>
+                  | <span class="highlight">Security Engineer</span>.<br />
+                  <br />
+                  By day, I build systems that power the future. By night, I
+                  dive into the depths of code and networks, uncovering
+                  vulnerabilities and fortifying digital fortresses.<br />
+                  <br />
+                  My mission? To bridge the gap between innovation and security,
+                  one line of code at a time.<br />
+                  <br />
+                  Welcome to my domain. Let's make the digital world a safer
+                  place. 🖥️🔒
+                </p>
+              </div>
+            </div>
 
-        <div class="p-12 w-screen h-screen justify-center flex">
-          <router-outlet></router-outlet>
+            <!-- New terminal line-->
+            <div class="mt-1">
+              <p class="mb-4 flex">
+                <span class="text-green-500"
+                  >theblxckcicada@ovawatch.co.za:~$</span
+                ><span class="blinking-cursor"></span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <footer
-      class="text-white flex justify-center bottom-0 fixed w-screen p-4 bg-basecolor cursor-pointer"
-      (click)="navigateToHome()"
-    >
-      <div class="flex justify-center">
-        <mat-icon>copyright</mat-icon> The Blxck Cicada
-      </div>
-      <div class="text-white app-justify-center">
-        <a class="button" [href]="getYoutubeUrl()" [target]="getYoutubeUrl()">
-          <i class="fa-brands fa-youtube" aria-hidden="true"></i>
-        </a>
-        <a
-          class="button"
-          [href]="getInstagramUrl()"
-          [target]="getInstagramUrl()"
-        >
-          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-        </a>
-        <a class="button" [href]="getLinkedInUrl()" [target]="getLinkedInUrl()">
-          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-        </a>
-        <a class="button" [href]="getGithubUrl()" [target]="getGithubUrl()">
-          <i class="fa-brands fa-github" aria-hidden="true"></i>
-        </a>
-      </div>
-    </footer>
   `,
   styles: [
     `
@@ -113,24 +76,57 @@ import { environment } from 'src/environments/environment';
       @tailwind utilities;
 
       @layer base {
-        .app-justify-center {
-          @apply flex justify-center;
-        }
-        .active {
-          @apply text-white font-bold border-b-2 hover:font-bold;
-        }
-        .button {
-          @apply app-justify-center px-4 text-xl hover:scale-110 cursor-pointer;
+        /* Intro Section */
+        .intro {
+          @apply m-10 p-5 border-2 border-green-500 rounded-md;
         }
 
-        .nav {
-          @apply text-white  app-justify-center flex-wrap fixed w-full  bg-black h-24 px-12;
+        .intro h2 {
+          @apply text-2xl text-green-500 mb-5;
         }
-        .body {
-          @apply bg-basecolor h-screen app-justify-center;
+
+        .intro p {
+          @apply text-[1.1rem] leading-[1.8] text-green-500 opacity-90;
         }
-        .nav-link {
-          @apply h-10 px-12 py-2 cursor-pointer app-justify-center hover:border-b-2;
+
+        .highlight {
+          @apply text-green-500 font-bold;
+        }
+
+        .glitch {
+          @apply relative text-green-500;
+        }
+
+        .glitch::before {
+          content: attr(data-text);
+          @apply absolute top-0 left-[2px] w-full h-full;
+          text-shadow: -2px 0 #ff00ff;
+          animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+          content: attr(data-text);
+          @apply absolute top-0 left-[-2px] w-full h-full;
+          text-shadow: 2px 0 #00ffff;
+          animation: glitch-anim 1s infinite linear alternate-reverse;
+        }
+        .blinking-cursor {
+          display: inline-block;
+          width: 4px;
+          height: 20px;
+          background-color: #00ff00;
+          animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+          0%,
+          50% {
+            opacity: 1;
+          }
+          51%,
+          100% {
+            opacity: 0;
+          }
         }
       }
     `,
