@@ -1,30 +1,38 @@
 import { Component } from '@angular/core';
 import { environment } from 'src/environments/environment';
 @Component({
+  standalone: false,
   selector: 'app-about',
   template: `
-    <div class="container flex flex-col mt-32 lg:mt-56 ">
+    <div class=" flex flex-col mt-32 lg:mt-56">
       <div class="flex flex-col lg:flex-row ">
-        <div class="w-screen flex  justify-center">
-          <div class="flex-col text-white app-justify-center">
+        <div class="w-full flex  justify-center">
+          <div class="flex-col text-white  app-justify-center">
             <p class="app-justify-center p-2 text-2xl lg:text-4xl ">
               Hi there! 👋
             </p>
             <p class="app-justify-center p-2 text-2xl lg:text-4xl ">
               I'm Dimakatso Sebatane
             </p>
+            <span class="flex justify-center"
+              >a.k.a.<span class="font-bold mx-1 text-green-500"
+                >theblxckcicada</span
+              >
+              in the shadows</span
+            >
             <ul
               class="flex lg:app-justify-center text-lg lg:text-2xl p-2 flex-col lg:flex-row"
             >
+              <li class="px-2">Ethical Hacker |</li>
+              <li class="px-2">Security Engineer |</li>
               <li class="px-2">Developer |</li>
-              <li class="px-2">Software Integration |</li>
-              <li class="px-2">Security Engineer</li>
+              <li class="px-2">Software Integration</li>
             </ul>
 
             <div class="flex justify-center p-2 w-full">
               <a
-                routerLink="/non-tech/projects"
-                class="shadow-b-sm p-2 w-36 flex justify-center rounded-sm border-b-2 border-gray-900 hover:border-b-2 hover:border-white "
+                routerLink="/u/projects"
+                class="shadow-b-sm p-2 w-36 flex justify-center rounded-sm border-b-2 border-white hover:border-b-2 hover:text-green-500 hover:border-green-500 "
                 >View Projects</a
               >
             </div>
@@ -54,10 +62,10 @@ import { environment } from 'src/environments/environment';
         }
 
         .nav {
-          @apply text-white h-10 mt-4 app-justify-center flex-wrap;
+          @apply text-white font-bold h-10 mt-4 app-justify-center flex-wrap;
         }
         .content {
-          @apply flex flex-col bg-darkgray text-white w-full;
+          @apply flex flex-col bg-darkgray text-white font-bold w-full;
         }
         .nav-link {
           @apply px-12 py-2 cursor-pointer app-justify-center hover:bg-warmgray;

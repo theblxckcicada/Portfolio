@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Project } from 'src/models';
 
 @Component({
+  standalone: false,
   selector: 'app-project-item-container',
   template: `<app-project-item
     [project]="project"

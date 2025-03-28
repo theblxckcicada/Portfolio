@@ -63,38 +63,44 @@ export class ProjectService {
 
   skills: Skill[] = [
     {
-      icon: 'assets/hacker.avif',
-      text: 'Network Pentest | Ethical Hacking',
+      icon: 'assets/osint-skill.jpg',
+      text: 'Open Source Intelligence | OSINT',
+      isCertification: false,
+    },
+    {
+      icon: 'assets/network-pentest.jpg',
+      text: 'Network Pentest | Active Directory',
+      isCertification: false,
+    },
+    {
+      icon: 'assets/cloud-pentest.jpg',
+      text: 'Cloud Pentest | Azure, AWS, GCP',
       isCertification: false,
     },
     {
       icon: 'assets/azure-icon.png',
-      text: 'Microsoft Azure | Cloud Development',
+      text: 'Azure Cloud Development',
       isCertification: false,
     },
     {
       icon: 'assets/dotnet-icon.png',
-      text: 'C# - Asp.Net Core',
+      text: 'C# - Asp.Net Core| Rest API development',
       isCertification: false,
     },
     {
       icon: 'assets/integration.png',
-      text: 'Integration - CI/CD | Azure DevOps',
+      text: 'CI/CD Integration | Azure DevOps',
       isCertification: false,
     },
     {
       icon: 'assets/angular.svg',
-      text: 'Angular',
+      text: 'Angular | Frontend  Development',
       isCertification: false,
     },
+
     {
-      icon: 'assets/cisco-icon.png',
-      text: 'Cisco Networking',
-      isCertification: false,
-    },
-    {
-      icon: 'assets/typescript.png',
-      text: 'Typescript',
+      icon: 'assets/python.png',
+      text: 'Python Scripting',
       isCertification: false,
     },
 
@@ -102,21 +108,29 @@ export class ProjectService {
       icon: 'assets/pjpt.png',
       text: 'Practical Junior Penetration Tester',
       isCertification: true,
+      certLink:
+        'https://www.credential.net/0addc8a4-67a1-4f5b-a5bf-0dd5b62caca9?key=a3767678ea409fef101b140fffaca95c0a7453d1c36a803a94a1f6d4b1f5c36e#acc.H0vW5mzq',
     },
     {
       icon: 'assets/PNPT.png',
       text: 'Practical Network Penetration Tester',
       isCertification: true,
+      certLink:
+        'https://certified.tcm-sec.com/19b79e05-95f3-44e8-8560-88d2228237ea#acc.R8UeyoPs',
     },
     {
       icon: 'assets/dev-associate.png',
       text: 'Microsoft Azure Developer',
       isCertification: true,
+      certLink:
+        'https://www.credly.com/badges/7a044e9a-4e62-4320-b3c8-08b060d6e437/linked_in_profile',
     },
     {
       icon: 'assets/devops.png',
       text: 'Microsoft Azure DevOps Engineer',
       isCertification: true,
+      certLink:
+        'https://www.credly.com/badges/5e1c85c0-213e-4684-a3c3-8abe8585f663/linked_in_profile',
     },
   ];
 

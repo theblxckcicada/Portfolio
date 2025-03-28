@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
 @Component({
+  standalone: false,
   selector: 'app-terminal',
   template: `
     <!-- <div class="bg-image z-0"></div>
@@ -18,7 +19,7 @@ import { environment } from 'src/environments/environment';
           </div>
           <div class="text-center flex-grow">
             <span class="text-sm text-green-500"
-              >theblxckcicada@ovawatch.co.za: ~</span
+              >theblxckcicada&#64;ovawatch.co.za: ~</span
             >
           </div>
         </div>
@@ -29,7 +30,7 @@ import { environment } from 'src/environments/environment';
           <div>
             <p class="mb-4">
               <span class="text-green-500"
-                >theblxckcicada@ovawatch.co.za:~$</span
+                >theblxckcicada&#64;ovawatch.co.za:~$</span
               >
               <span class="text-white ml-3">cat welcome.txt</span>
             </p>
@@ -60,7 +61,7 @@ import { environment } from 'src/environments/environment';
           <div class="mt-1">
             <p class="mb-4 flex">
               <span class="text-green-500"
-                >theblxckcicada@ovawatch.co.za:~$</span
+                >theblxckcicada&#64;ovawatch.co.za:~$</span
               ><span class="blinking-cursor"></span>
             </p>
           </div>

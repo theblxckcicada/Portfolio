@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'app-terminal-container',
   template: ` <div class="py-2">
       <button
@@ -20,7 +21,7 @@ import { Component } from '@angular/core';
 export class TerminalContainer {
   onNavigateToNonTechSite() {
     if (this.isTerminal()) {
-      window.open('/non-tech');
+      window.open('/u');
       return;
     }
     window.open('/terminal');

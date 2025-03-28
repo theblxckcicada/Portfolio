@@ -18,6 +18,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 const AngularMaterialModules = [
   MatCardModule,
@@ -45,6 +46,7 @@ const AngularMaterialModules = [
   MatListModule,
   MatProgressSpinnerModule,
   MatSnackBarModule,
+  MatButtonModule,
 ];
 
 @NgModule({

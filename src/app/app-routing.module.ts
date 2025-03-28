@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
-    path: 'non-tech',
+    path: 'u',
     loadChildren: () =>
       import('./features/home/home.module').then((m) => m.HomeModule),
   },
@@ -15,19 +15,18 @@ const routes: Routes = [
     path: 'terminal',
     loadChildren: () =>
       import('./features/terminal/terminal.module').then(
-        (m) => m.TerminalModule
+        (m) => m.TerminalModule,
       ),
   },
 
   {
     path: '**',
-    redirectTo: 'terminal',
+    redirectTo: 'u',
   },
 ];
 @NgModule({
   declarations: [],
   imports: [RouterModule.forRoot(routes)],
-  providers: [],
-  bootstrap: [],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

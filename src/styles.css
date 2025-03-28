@@ -18,12 +18,12 @@ body {
   z-index: 2;
 }
 .bg-image {
-  background-image: url("assets/ovawatch.png");
-  filter: blur(12px);
-  -webkit-filter: blur(20px);
-  height: 100%;
-  width: auto;
+  background-image: url("assets/new_blxckcicada.png");
+  filter: blur(5px);
+  -webkit-filter: blur(40px);
+  background-repeat: no-repeat; /* Ensure it repeats */
+  background-size: cover; /* Prevents it from stretching */
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
 }
