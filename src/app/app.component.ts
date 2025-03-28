@@ -3,11 +3,16 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
 @Component({
+  standalone: false,
   selector: 'app-root',
   template: `
-    <div class="bg-image z-0"></div>
-    <div class="absolute top-0 w-full h-full border-white border-2">
-      <router-outlet></router-outlet>
+    <div class=" h-screen  w-full z-0">
+      <div class="bg-image z-0 h-screen w-full"></div>
+      <div
+        class="absolute top-0  border-white border-2 w-full overflow-auto h-full "
+      >
+        <router-outlet></router-outlet>
+      </div>
     </div>
   `,
   styles: [

@@ -4,6 +4,7 @@ import { ProjectService } from 'src/app/apis/project.service';
 import { CTF, Project } from 'src/models';
 
 @Component({
+  standalone: false,
   selector: 'app-project-container',
   template: `<app-project
     [web_projects]="web_project$ | async"
